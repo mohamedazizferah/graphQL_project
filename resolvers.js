@@ -1,6 +1,14 @@
+const product = require("./models");
 const resolvers = {
   Query: {
-    books: () => books,
+    getProducts: async () => {
+      const products = await product.find({});
+      return products;
+    },
+    getProduct: async (parent, args) => {
+      const oneProduct = await product.findById(args.id);
+      return oneProduct;
+    },
   },
 };
-export default resolvers;
+module.exports = resolvers;
