@@ -13,15 +13,16 @@ const typeDefs = gql`
   }
   type Mutation {
     addProduct(
-      title: String!
-      desc: String!
-      status: String!
-      languages: [String]!
+      title: String
+      desc: String
+      status: String
+      languages: [String]
     ): Product
     updateProduct(
-      title: String!
-      desc: String!
-      status: String!
+      id: ID
+      title: String
+      desc: String
+      status: String
       languages: [String]
     ): Product
     deleteProduct(id: ID!): Product
