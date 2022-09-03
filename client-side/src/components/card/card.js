@@ -18,7 +18,13 @@ function Card() {
         <p className="card-content">
           I am a very simple card. I am good at containing small bits of
           information. I am convenient because I require little markup to use
-          effectively.
+          effectively. lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+          ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+          ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+          ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum
         </p>
         <div className="card-skills">
           <div className="card-skill">htlm</div>
@@ -29,12 +35,16 @@ function Card() {
       </div>
       <div className="card-right">
         <span className="card-status">
-          <CheckCircleIcon />
-          Card Title
+          <CheckCircleIcon sx={{ fontSize: "1.5vw" }} />
+          internship
         </span>
         <button className="delete-btn">
-          <CloseIcon sx={{ fontSize: 35 }} />
+          <CloseIcon sx={{ fontSize: "1.5vw" }} />
         </button>
+        <div className="card-buttons">
+          <button className="card-button">view profile</button>
+          <button className="card-button">update profile</button>
+        </div>
       </div>
     </div>
   );
