@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Balinese:wght@700&display=swap');
+.card{
+    background-color: #fff;
+    border-radius: 1vw;
+    width: 55vw;
+    min-height: 40vh ;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    overflow: hidden;
+    position:relative
+}
+.card-left{
+    position: absolute;
+    background-color: red;
+    width: 20%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+}
+.card-center{
+    width: 60%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 20%;
+    display: flex;
+    flex-direction: column;
+}
+.card-right{
+    width: 20%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: blue;
+}
+.card-image{
+    position: absolute;
+    width: 80%;
+    overflow: hidden;
+    border-radius: 50%;
+    top:2vh;
+    left: 1vw;
+}
+.card-image img{
+    
+    width: 100%;
+    object-fit: cover;
+}
+.card-title{
+    max-height: fit-content;
+    width: fit-content;
+    margin-top: 1vh;
+    margin-left: 1vw;
+    font-size: 2vw;
+    color: rgb(0, 0, 0);
+    font-family: 'Noto Sans Balinese', sans-serif;
+    
+}
+.card-content{
+    display: inline-block;
+    margin-left: 1vw;
+    font-size: 1vw;
+    vertical-align: top;
+    color: rgb(71, 71, 71);
+    text-align: left;
+}
+.card-skills{
+    display: flex;
+    gap: 0.5vw;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.card-skill{
+    background-color: rgb(223, 222, 222);
+    color: rgb(61, 61, 61);
+    font-size: 1vw;
+    font-weight: 400;
+    border-radius: 1vw;
+    padding-block: 0.5vh;
+    padding-inline: 1vw ;
+    min-width: 1.5vw;
+    
+}
+.delete-btn{
+    position: absolute;
+    top: 0.5vh;
+    right: 0;
+    background-color: transparent;
+    color: rgb(87, 87, 87);
+    border: none;
+    cursor: pointer;
+}
+.delete-btn:hover{
+    color: rgb(0, 0, 0);
+}
