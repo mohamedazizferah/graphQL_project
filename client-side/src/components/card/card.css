@@ -3,7 +3,7 @@
   position: relative;
   background-color: #fff;
   border-radius: 1vw;
-  width: 50vw;
+  width: 40vw;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
@@ -48,6 +48,7 @@
   object-fit: cover;
 }
 .card-title {
+  position: relative;
   padding: 0;
   margin: 0;
   margin-top: 1.5vh;
@@ -105,7 +106,8 @@
 }
 .card-status {
   position: absolute;
-  top: 1.5vh;
+  top: 2.5vh;
+  left: 0.5vw;
   display: flex;
   align-items: center;
   font-family: "Raleway", sans-serif;
@@ -115,22 +117,28 @@
   position: absolute;
   display: flex;
   flex-direction: column;
+  width: 90%;
   gap: 1vw;
   top: 4vw;
+  left: 0;
   justify-content: center;
   align-items: center;
 }
 .card-button {
+  position: relative;
   font-family: "Raleway", sans-serif;
   background-color: rgb(48, 79, 253);
   color: rgb(255, 255, 255);
-  font-size: 1vw;
-  font-weight: 600;
-  border-radius: 0.5vw;
+  font-size: 0.8vw;
+  font-weight: 500;
+  border-radius: 5px;
   padding-block: 0.5vw;
-  padding-inline: 1vw;
-  min-width: 1.5vw;
+  padding-inline: 0.5vw;
+  width: 80%;
   cursor: pointer;
   border: none;
   outline: none;
+}
+.card-button:hover {
+  background-color: rgb(20, 82, 218);
 }
