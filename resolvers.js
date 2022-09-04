@@ -12,12 +12,7 @@ const resolvers = {
   },
   Mutation: {
     addProduct: async (parent, args) => {
-      const newProduct = new product({
-        title: args.title,
-        desc: args.desc,
-        status: args.status,
-        languages: args.languages,
-      });
+      const newProduct = new product(args);
       await newProduct.save();
       return newProduct;
     },
@@ -26,9 +21,7 @@ const resolvers = {
       return deletedProduct;
     },
     updateProduct: async (parent, args) => {
-      const { id, title, desc, status, languages } = args;
-      const updates = { title, desc, status, languages };
-      const updatedProduct = await product.findByIdAndUpdate(id, updates, {
+      const updatedProduct = await product.findByIdAndUpdate(args.id, args, {
         new: true,
       });
       return updatedProduct;

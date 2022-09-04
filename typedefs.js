@@ -2,9 +2,10 @@ const { gql } = require("apollo-server");
 const typeDefs = gql`
   type Product {
     id: ID!
-    title: String
+    name: String
     desc: String
     status: String
+    image: String
     languages: [String]
   }
   type Query {
@@ -13,16 +14,18 @@ const typeDefs = gql`
   }
   type Mutation {
     addProduct(
-      title: String
+      name: String
       desc: String
       status: String
+      image: String
       languages: [String]
     ): Product
     updateProduct(
       id: ID
-      title: String
+      name: String
       desc: String
       status: String
+      image: String
       languages: [String]
     ): Product
     deleteProduct(id: ID!): Product

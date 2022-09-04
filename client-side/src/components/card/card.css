@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&display=swap");
 .card {
   position: relative;
   background-color: #fff;
   border-radius: 1vw;
-  width: 40vw;
+  width: 100%;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
@@ -35,11 +35,11 @@
 }
 .card-image {
   position: absolute;
-  width: 80%;
+  width: 90%;
   aspect-ratio: 1;
   overflow: hidden;
   border-radius: 50%;
-  top: 2vh;
+  top: 11%;
   left: 1vw;
 }
 .card-image img {
@@ -55,6 +55,7 @@
   margin-left: 1vw;
   margin-bottom: 0;
   font-size: 2vw;
+  font-weight: 800;
   color: rgb(0, 0, 0);
   font-family: "Raleway", sans-serif;
 }
@@ -63,7 +64,7 @@
   margin: 0;
   width: 90%;
   margin-left: 1vw;
-  font-size: 1vw;
+  font-size: 0.8vw;
   color: rgb(71, 71, 71);
   text-align: left;
   overflow: hidden;
@@ -84,18 +85,19 @@
 .card-skill {
   background-color: rgb(223, 222, 222);
   color: rgb(61, 61, 61);
-  font-size: 1vw;
+  font-size: 0.75vw;
   font-weight: 400;
   border-radius: 1vw;
   padding-block: 0;
-  padding-inline: 0.7vw;
+  padding-inline: 0.6vw;
   min-width: 1.5vw;
   pointer-events: none;
 }
 .delete-btn {
   position: absolute;
-  top: 0.5vh;
-  right: 0;
+  top: 3%;
+  right: 3%;
+  padding: 0;
   background-color: transparent;
   color: rgb(87, 87, 87);
   border: none;
@@ -106,8 +108,8 @@
 }
 .card-status {
   position: absolute;
-  top: 2.5vh;
-  left: 0.5vw;
+  top: 10%;
+  left: 0.7vw;
   display: flex;
   align-items: center;
   font-family: "Raleway", sans-serif;
@@ -138,6 +140,7 @@
   cursor: pointer;
   border: none;
   outline: none;
+  white-space: nowrap;
 }
 .card-button:hover {
   background-color: rgb(20, 82, 218);

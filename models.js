@@ -4,6 +4,7 @@ const schema = mongoose.Schema({
   title: String,
   desc: String,
   status: String,
+  image: String,
   languages: [String],
 });
 
