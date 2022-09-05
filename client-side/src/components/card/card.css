@@ -24,6 +24,7 @@
   left: 20%;
   display: flex;
   flex-direction: column;
+  padding: 1vw;
 }
 .card-right {
   width: 20%;
@@ -41,17 +42,19 @@
   border-radius: 50%;
   top: 11%;
   left: 1vw;
+  background-image: url("https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482930.jpg");
 }
 .card-image img {
   position: relative;
   width: 100%;
   object-fit: cover;
+  height: 100%;
 }
 .card-title {
   position: relative;
   padding: 0;
   margin: 0;
-  margin-top: 1.5vh;
+  margin-top: min(1.5vh, 1.5vw);
   margin-left: 1vw;
   margin-bottom: 0;
   font-size: 2vw;
@@ -75,10 +78,15 @@
   -webkit-box-orient: vertical;
 }
 .card-skills {
+  position: relative;
+  padding: 0;
   margin-block: 1vw;
   display: flex;
+  align-items: left;
+  justify-content: left;
+  margin-left: 0.5vw;
   gap: 0.5vw;
-  width: 100%;
+  width: 85%;
   flex-wrap: wrap;
   margin-block: 2vw;
 }

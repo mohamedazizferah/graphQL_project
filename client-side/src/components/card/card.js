@@ -1,43 +1,52 @@
+import { useMutation } from "@apollo/client";
 import CloseIcon from "@mui/icons-material/Close";
+import { DELETE_PRODUCT } from "../../apollo-client/mutations";
+import { GET_PRODUCTS } from "../../apollo-client/queries";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import "./card.css";
 
-function Card() {
+function Card({ product }) {
+  const [deleteProduct, { data, loading, error }] = useMutation(
+    DELETE_PRODUCT,
+    {
+      variables: { deleteProductId: product.id },
+      refetchQueries: [{ query: GET_PRODUCTS }],
+    }
+  );
+  const handleClick = () => {
+    deleteProduct({
+      variables: { id: product.id },
+    });
+  };
   return (
     <div className="card">
       <div className="card-left">
         <div className="card-image">
-          <img
-            src="https://veganwithgusto.com/wp-content/uploads/2021/05/speedy-spaghetti-arrabbiata-featured-e1649949762421.jpg"
-            alt="sample"
-          />
+          {product.image ? (
+            <img src={product.image} alt="product" />
+          ) : (
+            <img
+              src="https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482930.jpg"
+              alt="product"
+            />
+          )}
         </div>
       </div>
       <div className="card-center">
-        <span className="card-title">Card Title</span>
-        <p className="card-content">
-          lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin varius
-          eros quis nulla lacinia, eu porttitor orci laoreet. Mauris tempus
-          consectetur fermentum. Ut vel porta quam. Nunc sit amet luctus ipsum.
-          Maecenas sed lacus fermentum, dapibus tellus quis, pellentesque ipsum.
-          Etiam at ornare dui. Phasellus eget arcu leo. Donec pulvinar placerat
-          pulvinar. Donec rhoncus ex sed tincidunt gravida. Phasellus mollis,
-          arcu non viverra posuere, justo odio tempus erat, sit amet fringilla
-          urna nisi non felis. Praesent id pulvinar libero.
-        </p>
+        <span className="card-title">{product.name}</span>
+        <p className="card-content">{product.desc}</p>
         <div className="card-skills">
-          <div className="card-skill">htlm</div>
-          <div className="card-skill">CSS</div>
-          <div className="card-skill">react</div>
-          <div className="card-skill">typeScript</div>
+          {product.languages.map((language) => (
+            <div className="card-skill">{language}</div>
+          ))}
         </div>
       </div>
       <div className="card-right">
         <span className="card-status">
           <CheckCircleIcon sx={{ fontSize: "1vw" }} />
-          internship
+          {product.status}
         </span>
-        <button className="delete-btn">
+        <button className="delete-btn" onClick={handleClick}>
           <CloseIcon sx={{ fontSize: "1.5vw" }} />
         </button>
         <div className="card-buttons">
