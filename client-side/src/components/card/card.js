@@ -1,23 +1,26 @@
+import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import CloseIcon from "@mui/icons-material/Close";
 import { DELETE_PRODUCT } from "../../apollo-client/mutations";
 import { GET_PRODUCTS } from "../../apollo-client/queries";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import BasicModal from "../modal/modal";
 import "./card.css";
 
 function Card({ product }) {
-  const [deleteProduct, { data, loading, error }] = useMutation(
-    DELETE_PRODUCT,
-    {
-      variables: { deleteProductId: product.id },
-      refetchQueries: [{ query: GET_PRODUCTS }],
-    }
-  );
+  const [deleteProduct] = useMutation(DELETE_PRODUCT, {
+    variables: { deleteProductId: product.id },
+    refetchQueries: [{ query: GET_PRODUCTS }],
+  });
   const handleClick = () => {
     deleteProduct({
       variables: { id: product.id },
     });
   };
+  const handleclose = () => {
+    setOpen(false);
+  };
+  const [open, setOpen] = useState(false);
   return (
     <div className="card">
       <div className="card-left">
@@ -51,7 +54,15 @@ function Card({ product }) {
         </button>
         <div className="card-buttons">
           <button className="card-button">view profile</button>
-          <button className="card-button">update profile</button>
+          <button className="card-button" onClick={() => setOpen(true)}>
+            update profile
+          </button>
+          <BasicModal
+            open={open}
+            handleclose={handleclose}
+            product={product}
+            purpose="update"
+          />
         </div>
       </div>
     </div>

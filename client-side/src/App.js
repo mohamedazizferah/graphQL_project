@@ -2,7 +2,6 @@ import { useState } from "react";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Container from "./components/cardContainer/container";
 import BasicModal from "./components/modal/modal";
-import Button from "@mui/material/Button";
 import "./App.css";
 
 function App() {
@@ -24,7 +23,12 @@ function App() {
         <button className="app-button" onClick={() => setOpen(true)}>
           add a card
         </button>
-        <BasicModal open={open} handleclose={handleclose} purpose="add" />
+        <BasicModal
+          open={open}
+          handleclose={handleclose}
+          product={[]}
+          purpose="add"
+        />
         <Container />
       </div>
     </ApolloProvider>

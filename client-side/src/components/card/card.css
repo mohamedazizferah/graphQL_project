@@ -96,9 +96,12 @@
   font-size: 0.75vw;
   font-weight: 400;
   border-radius: 1vw;
-  padding-block: 0;
+  padding-bottom: 0.1vw;
   padding-inline: 0.6vw;
   min-width: 1.5vw;
+  align-items: center;
+  justify-content: center;
+  display: flex;
   pointer-events: none;
 }
 .delete-btn {
