@@ -1,18 +1,11 @@
 import { useState } from "react";
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
-import Container from "./components/cardContainer/container";
+import { ApolloProvider } from "@apollo/client";
 import BasicModal from "./components/modal/modal";
+import { client } from "./apollo-client";
 import "./App.css";
+import MainPage from "./pages/mainPage";
 
 function App() {
-  const client = new ApolloClient({
-    uri: "http://localhost:8000/graphql",
-    cache: new InMemoryCache(),
-    onError: ({ networkError, graphQLErrors }) => {
-      console.log("graphQLErrors", graphQLErrors);
-      console.log("networkError", networkError);
-    },
-  });
   const handleclose = () => {
     setOpen(false);
   };
@@ -29,7 +22,7 @@ function App() {
           product={[]}
           purpose="add"
         />
-        <Container />
+        <MainPage />
       </div>
     </ApolloProvider>
   );
