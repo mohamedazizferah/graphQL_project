@@ -13,7 +13,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import Button from "@mui/material/Button";
-
+import { uploadImage } from "./upload";
 import { devLanguages } from "./choises";
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
@@ -40,7 +40,9 @@ export default function BasicModal({ open, handleclose, purpose, product }) {
   const [name, setName] = useState(product.name);
   const [desc, setDesc] = useState(product.desc);
   const [status, setStatus] = useState(product.status);
-  const [image, setImage] = useState(product.image);
+  const [image, setImage] = useState("");
+  const [url, setUrl] = useState(product.image);
+  const [loading, setLoading] = useState(false);
   const [addProduct] = useMutation(ADD_PRODUCT, {
     refetchQueries: [{ query: GET_PRODUCTS }],
   });
@@ -53,7 +55,7 @@ export default function BasicModal({ open, handleclose, purpose, product }) {
         name: name,
         desc: desc,
         status: status,
-        image: image,
+        image: url,
         languages: skills,
       },
     });
@@ -66,11 +68,10 @@ export default function BasicModal({ open, handleclose, purpose, product }) {
         name: name,
         desc: desc,
         status: status,
-        image: image,
+        image: url,
         languages: skills,
       },
     });
-    console.log("aaaaaaaaaaaaa", name);
   };
   return (
     <Modal
@@ -92,12 +93,18 @@ export default function BasicModal({ open, handleclose, purpose, product }) {
           value={status}
           onChange={(e) => setStatus(e.target.value)}
         />
-        <InputLabel htmlFor="component-simple">image URL</InputLabel>
-        <Input
-          id="component-simple"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
-        />
+        <InputLabel htmlFor="component-simple">image</InputLabel>
+
+        <Button variant="contained" component="label">
+          Upload
+          <input
+            hidden
+            accept="image/*"
+            multiple
+            type="file"
+            onChange={(e) => uploadImage(e.target.files[0], setUrl, setLoading)}
+          />
+        </Button>
         <InputLabel htmlFor="component-simple">skills</InputLabel>
         <Autocomplete
           multiple
@@ -132,11 +139,19 @@ export default function BasicModal({ open, handleclose, purpose, product }) {
           onChange={(e) => setDesc(e.target.value)}
         />
         {purpose === "add" ? (
-          <Button variant="contained" onClick={handleAddCard}>
+          <Button
+            disabled={loading}
+            variant="contained"
+            onClick={handleAddCard}
+          >
             add card
           </Button>
         ) : (
-          <Button variant="contained" onClick={handleUpdateCard}>
+          <Button
+            disabled={loading}
+            variant="contained"
+            onClick={handleUpdateCard}
+          >
             update card
           </Button>
         )}

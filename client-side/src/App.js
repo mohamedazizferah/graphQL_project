@@ -16,6 +16,7 @@ function App() {
         <button className="app-button" onClick={() => setOpen(true)}>
           add a card
         </button>
+
         <BasicModal
           open={open}
           handleclose={handleclose}

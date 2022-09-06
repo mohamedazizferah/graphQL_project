@@ -1,3 +1,4 @@
+import "./mainpage.css";
 import Container from "../components/cardContainer/container";
 
 function MainPage() {
