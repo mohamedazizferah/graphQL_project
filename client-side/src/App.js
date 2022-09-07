@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { ApolloProvider } from "@apollo/client";
-import BasicModal from "./components/modal/modal";
 import { client } from "./apollo-client";
 import "./App.css";
 import MainPage from "./pages/mainPage";

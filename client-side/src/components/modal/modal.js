@@ -40,7 +40,6 @@ export default function BasicModal({ open, handleclose, purpose, product }) {
   const [name, setName] = useState(product.name);
   const [desc, setDesc] = useState(product.desc);
   const [status, setStatus] = useState(product.status);
-  const [image, setImage] = useState("");
   const [url, setUrl] = useState(product.image);
   const [loading, setLoading] = useState(false);
   const [addProduct] = useMutation(ADD_PRODUCT, {
