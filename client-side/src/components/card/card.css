@@ -32,7 +32,6 @@
   position: absolute;
   top: 0;
   right: 0;
-  padding-left: 1vw;
 }
 .card-image {
   position: absolute;
@@ -54,7 +53,7 @@
   position: relative;
   padding: 0;
   margin: 0;
-  margin-top: min(1.5vh, 1.5vw);
+  margin-top: min(1vh, 1vw);
   margin-left: 1vw;
   margin-bottom: 0;
   font-size: 2vw;
@@ -106,9 +105,8 @@
 }
 .delete-btn {
   position: absolute;
-  top: 3%;
-  right: 3%;
-  padding: 0;
+  top: 0.5vw;
+  right: 0.2vw;
   background-color: transparent;
   color: rgb(87, 87, 87);
   border: none;
@@ -119,7 +117,7 @@
 }
 .card-status {
   position: absolute;
-  top: 10%;
+  top: 2vw;
   left: 0.7vw;
   display: flex;
   align-items: center;
@@ -130,7 +128,7 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 85%;
   gap: 1vw;
   top: 4vw;
   left: 0;
@@ -147,7 +145,7 @@
   border-radius: 5px;
   padding-block: 0.5vw;
   padding-inline: 0.5vw;
-  width: 80%;
+  width: 100%;
   cursor: pointer;
   border: none;
   outline: none;

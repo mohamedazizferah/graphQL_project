@@ -45,13 +45,14 @@ function Card({ product }) {
         </div>
       </div>
       <div className="card-right">
+        <button className="delete-btn" onClick={handleClick}>
+          <CloseIcon sx={{ fontSize: "1.2vw" }} />
+        </button>
         <span className="card-status">
           <CheckCircleIcon sx={{ fontSize: "1vw" }} />
           {product.status}
         </span>
-        <button className="delete-btn" onClick={handleClick}>
-          <CloseIcon sx={{ fontSize: "1.5vw" }} />
-        </button>
+
         <div className="card-buttons">
           <button className="card-button">view profile</button>
           <button className="card-button" onClick={() => setOpen(true)}>
